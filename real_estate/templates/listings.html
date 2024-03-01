@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+{% block content %} 
+<a href="/add-listings/" class="text-blue-800 text-4xl">Create a new listing</a>
+{% for listing in index %}  
+<div class="px-3 px-2 bg-gray-200 rounded-sm mt-5 text-center" style="padding: 20px;" >
+    <h2 class="text-3xl text-white-800">{{listing.title}}</h2>
+    <img src="{{listing.image.url}}" alt="" class="mx-auto mt-2 mb-2" style="border-radius:20px; width:100vw; height:70vh;">
+    <a href="/listings/{{listing.id}}" class="text-blue-800 text-2xl">view details</a>
+</div>
+{% endfor %}
+{% endblock content %}
